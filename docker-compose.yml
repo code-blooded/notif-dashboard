@@ -1,0 +1,37 @@
+version: '1'
+services:
+  backend:
+    build: 
+      context: ./backend
+      dockerfile: ./Dockerfile 
+      args:
+        port: 4001
+    env_file:
+      - ./.env
+    restart: always
+    ports:
+      - "4001:4001"
+    expose:
+      - "4001"
+    environment:
+      WAIT_HOSTS: mongo:27017
+  frontend:
+    build: 
+      context: ./frontend
+      dockerfile: ./Dockerfile 
+      args:
+        port: 3000
+    env_file:
+      - ./.env
+    restart: always
+    ports:
+      - "3001:3000"
+    expose:
+      - "3001"
+    environment:
+      WAIT_HOSTS: mongo:27017
+  mongo:
+    container_name: mongo
+    image: mongo
+    ports:
+      - "27017:27017"
