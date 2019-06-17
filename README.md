@@ -7,7 +7,10 @@ Requires MongoDB to be running on localhost:27017 and the data can be imported f
 <br>
 <h2>Running the application</h2>
 
-The docker way to run: 'docker-compose up'
+The docker way to run: 'docker-compose up' 
+<br>
+&emsp;&emsp;or
+<br>
 Run independently:
 1) Dashboard: 
   Go to '\notif-dashboard\frontend' and run 'npm start'
