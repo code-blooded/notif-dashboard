@@ -1,4 +1,4 @@
-version: '1'
+version: '3'
 services:
   backend:
     build: 
@@ -25,9 +25,9 @@ services:
       - ./.env
     restart: always
     ports:
-      - "3001:3000"
+      - "3000:3000"
     expose:
-      - "3001"
+      - "3000"
     environment:
       WAIT_HOSTS: mongo:27017
   mongo:
